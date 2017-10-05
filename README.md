@@ -1,24 +1,9 @@
-# README
+# Map-It
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Map-It is a custom api for logging geographic co-ordinates of a point. It also supports logging of attribute data such as description.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Upcoming Features
+- Log co-ordinates in any format
+- Add desriptions of logged points
+- Ability to upload geotaged photos
+- Search points within a given radius
