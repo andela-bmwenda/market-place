@@ -50,3 +50,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Active model serializer
 gem 'active_model_serializers'
+
+# Use json web token for encoding and decoding tokens
+gem 'jwt'
+

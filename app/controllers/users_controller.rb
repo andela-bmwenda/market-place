@@ -11,9 +11,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.create(user_params)
+    token = JsonWebToken.encode(user_id: @user.id)
     if @user.save
-      render json: @user, status: :created
+      render json: token, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      render json: @user, status: 200
+      render json: @user, status: :ok
     else
       render json: @user.errors, status: :unprocessable_entity
     end
