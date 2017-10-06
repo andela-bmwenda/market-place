@@ -86,6 +86,9 @@ GEM
     pry (0.11.0)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
+    pry-byebug (3.4.3)
+      byebug (>= 9.0, < 9.1)
+      pry (~> 0.10)
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     puma (3.9.1)
@@ -175,6 +178,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   listen (~> 3.0.5)
+  pry-byebug
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.5)
