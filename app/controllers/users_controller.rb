@@ -11,13 +11,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    token = JsonWebToken.encode(user_id: @user.id)
-    if @user.save
-      render json: token, status: :created
-    else
-      render json: @user.errors, status: :unprocessable_entity
-    end
+    User.create!(user_params)
+    login
+  end
+
+  def login
+    auth_token = Authenticate.new(params[:email], params[:password])
+    token = auth_token.call
+    render json: { token: token }, status: :created
   end
 
   def update
