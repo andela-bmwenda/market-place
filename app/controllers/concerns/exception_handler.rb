@@ -11,6 +11,10 @@ module ExceptionHandler
       render json: { error: e.message }, status: :not_found
     end
 
+    rescue_from ActiveRecord::RecordInvalid do |e|
+      render json: { error: e.message }, status: :unprocessable_entity
+    end
+
     rescue_from ExceptionHandler::AuthenticationError, with: :authorization_error
     rescue_from ExceptionHandler::MissingToken, with: :authorization_error
     rescue_from ExceptionHandler::InvalidToken, with: :authorization_error
