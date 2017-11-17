@@ -42,6 +42,7 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'rspec_junit_formatter'
   gem 'shoulda-matchers'
 end
 
